@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
@@ -9,8 +8,10 @@ public class GameOver : MonoBehaviour
     [SerializeField] private Image _alphaImage;
     [SerializeField] private int _alpha;
     [SerializeField] private GameObject[] _water;
+    [SerializeField] private string _pop;
+    //private PopUpSystem _popUp;
+    private GameObject _particleFire;
     private SpriteRenderer _player;
-    private Button _restartButton;
     private Canvas _gameOver;
     private bool _canvasActive = false;
 
@@ -19,14 +20,14 @@ public class GameOver : MonoBehaviour
         _alphaImage = _alphaObj.GetComponent<Image>();
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         _gameOver = gameObject.GetComponent<Canvas>();
-        _restartButton = gameObject.GetComponentInChildren<Button>();
         _water = GameObject.FindGameObjectsWithTag("Water");
+        _particleFire = GameObject.FindGameObjectWithTag("Fire");
+        //_popUp = GameObject.FindGameObjectWithTag("PopUp").GetComponent<PopUpSystem>();
     }
 
     private void Start()
     {
         _gameOver.gameObject.SetActive(false);
-        _restartButton.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -46,13 +47,8 @@ public class GameOver : MonoBehaviour
     private IEnumerator RestartButton()
     {
         yield return new WaitForSeconds(2f);
-        DisableWater();
-        _restartButton.gameObject.SetActive(true);
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //_popUp.PopUp(_pop);
+        DisableObjects();
     }
 
     public void CanvasActive()
@@ -61,12 +57,18 @@ public class GameOver : MonoBehaviour
         _canvasActive = true;
     }
 
-    private void DisableWater()
+    private void DisableObjects()
     {
-        foreach(GameObject a in _water)
+        if (_water != null && _particleFire != null)
         {
-            MeshRenderer _waterRenderer = a.GetComponent<MeshRenderer>();
-            _waterRenderer.enabled = false;
+            foreach (GameObject a in _water)
+            {
+                MeshRenderer _waterRenderer = a.GetComponent<MeshRenderer>();
+                _waterRenderer.enabled = false;
+            }
+
+            ParticleSystem _firePatricle = _particleFire.GetComponent<ParticleSystem>();
+            _firePatricle.Stop();
         }
     }
 }
