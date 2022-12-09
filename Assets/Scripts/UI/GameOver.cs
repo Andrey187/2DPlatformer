@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] private int _alpha;
     [SerializeField] private GameObject[] _water;
     [SerializeField] private string _pop;
-    //private PopUpSystem _popUp;
+    private PopUpSystem _popUp;
     private GameObject _particleFire;
     private SpriteRenderer _player;
     private Canvas _gameOver;
@@ -18,11 +18,11 @@ public class GameOver : MonoBehaviour
     private void Awake()
     {
         _alphaImage = _alphaObj.GetComponent<Image>();
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SpriteRenderer>();
         _gameOver = gameObject.GetComponent<Canvas>();
         _water = GameObject.FindGameObjectsWithTag("Water");
         _particleFire = GameObject.FindGameObjectWithTag("Fire");
-        //_popUp = GameObject.FindGameObjectWithTag("PopUp").GetComponent<PopUpSystem>();
+        _popUp = GameObject.FindGameObjectWithTag("PopUp").GetComponent<PopUpSystem>();
     }
 
     private void Start()
@@ -47,7 +47,7 @@ public class GameOver : MonoBehaviour
     private IEnumerator RestartButton()
     {
         yield return new WaitForSeconds(2f);
-        //_popUp.PopUp(_pop);
+        _popUp.PopUp(_pop);
         DisableObjects();
     }
 

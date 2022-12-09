@@ -11,6 +11,10 @@ TagManager:
   - Canvas
   - Water
   - SliderPosition
+  - PopUp
+  - LevelCompleted
+  - Apple
+  - Fire
   layers:
   - Default
   - TransparentFX
