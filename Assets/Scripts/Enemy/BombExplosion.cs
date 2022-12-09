@@ -2,27 +2,36 @@ using UnityEngine;
 
 public class BombExplosion : MonoBehaviour
 {
-    [SerializeField] private GameObject _explosion;
-    [SerializeField] private GameObject _bomb;
-    [SerializeField] private Health _playerHealth;
-    private float _damage = 3;
+    [SerializeField] private GameObject _explosionPrefab;
+    [SerializeField] private LayerMask _whatIsEnemies;
+    [SerializeField] private float _explosionRadius;
+    [SerializeField] private float _explosionDamage;
+    private GameObject cloneExplosion;
 
     private void Start()
     {
-        _explosion.GetComponent<GameObject>();
-        _bomb.GetComponent<GameObject>();
-        _playerHealth = GameObject.Find("Player").GetComponent<Health>();
+        _explosionPrefab.GetComponent<GameObject>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        var enemiesToDamage = Physics2D.OverlapCircleAll(transform.position, _explosionRadius, _whatIsEnemies);
+        foreach (var obj in enemiesToDamage)
         {
-            GameObject cloneExplosion = Instantiate(_explosion, transform.position, Quaternion.identity);
-            _playerHealth.TakeHit(_damage);
-            _bomb.gameObject.SetActive(false);
-            Destroy(cloneExplosion, 1f);
+            var _target = obj.GetComponentInParent<Health>();
+            if (_target)
+            {
+                cloneExplosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+                _target.TakeHit(_explosionDamage / 2);
+                Destroy(cloneExplosion, 1f);
+            }
         }
-        
+        Destroy(gameObject, 0f);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _explosionRadius);
     }
 }
