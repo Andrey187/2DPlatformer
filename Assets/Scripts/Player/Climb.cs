@@ -112,7 +112,7 @@ public class Climb : MonoBehaviour
     private void FinishLedge() //добавляется в event animation
     {
         transform.position = new Vector3(_finishLedgePosition.position.x, _finishLedgePosition.position.y, _finishLedgePosition.position.z);
-        _healthBarCanvas.transform.position = _sliderPosition.position;
+        _healthBarCanvas.transform.position = _sliderPosition.transform.position;
         _anim.Play("IdleAnimation");
         _blockMoveXYforLedge = false;
     }

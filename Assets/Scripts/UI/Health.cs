@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     {
         _gameOver = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameOver>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
-        _anim = gameObject.GetComponent<Animator>();
+        _anim = gameObject.GetComponentInChildren<Animator>();
     }
 
     private void Start()
