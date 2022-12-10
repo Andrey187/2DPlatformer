@@ -555,8 +555,8 @@ TextureImporter:
         y: 960
         width: 45
         height: 45
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -576,8 +576,8 @@ TextureImporter:
         y: 960
         width: 35
         height: 35
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3582,7 +3582,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TX Village Props Fence A Pillar A: 21300024
+      TX Village Props Barrel: 21300008
       TX Village Props Spike: 21300228
       TX Village Props Clother Hanger Rope A: 21300234
       TX Village Props Fence B Rail: 21300040
@@ -3723,7 +3723,7 @@ TextureImporter:
       TX Village Props Heavy Sword: 21300168
       TX Village Props Archert Target: 21300154
       TX Village Props Grass E: 21300104
-      TX Village Props Barrel: 21300008
+      TX Village Props Fence A Pillar A: 21300024
       TX Village Props Road Sign Text C: 21300050
       TX Village Props Platform S: 21300216
   spritePackingTag: 
