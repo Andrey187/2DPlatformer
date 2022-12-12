@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] private Image _alphaImage;
     [SerializeField] private int _alpha;
     [SerializeField] private GameObject[] _water;
-    [SerializeField] private string _pop;
+    [SerializeField] private string _popText;
     private PopUpSystem _popUp;
     private GameObject _particleFire;
     private SpriteRenderer _player;
@@ -47,7 +47,7 @@ public class GameOver : MonoBehaviour
     private IEnumerator RestartButton()
     {
         yield return new WaitForSeconds(2f);
-        _popUp.PopUp(_pop);
+        _popUp.PopUp(_popText);
         DisableObjects();
     }
 

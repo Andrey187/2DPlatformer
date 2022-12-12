@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 335559745}
   - component: {fileID: 335559744}
   - component: {fileID: 335559743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6163,11 +6163,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7917746640601557960, guid: 27aee397a85d2dd49860bd6334c8a864, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5346665
+      value: 2.8066666
       objectReference: {fileID: 0}
     - target: {fileID: 7917746640601557960, guid: 27aee397a85d2dd49860bd6334c8a864, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.16699988
+      value: 0.7360001
       objectReference: {fileID: 0}
     - target: {fileID: 7917746640601557960, guid: 27aee397a85d2dd49860bd6334c8a864, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6986,7 +6986,7 @@ MonoBehaviour:
   _alphaImage: {fileID: 68102749254761240}
   _alpha: 0
   _water: []
-  _pop: "\u041D\u0443 \u0447\u0442\u043E, \u0442\u044B \u0443\u043C\u0435\u0440."
+  _popText: 
 --- !u!1 &68102749052825461
 GameObject:
   m_ObjectHideFlags: 0
@@ -8713,7 +8713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3756553629605505958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.899, y: -0.785, z: 0}
+  m_LocalPosition: {x: 0.88, y: -0.721, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8738,10 +8738,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 569953f52e2b95f4181747f1be30b3a8, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!234 &3756553629605505955
 SliderJoint2D:
@@ -8758,7 +8758,7 @@ SliderJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0.06723118, y: -0.010343313}
-  m_ConnectedAnchor: {x: 3.55, y: -0.30534333}
+  m_ConnectedAnchor: {x: 3.4882793, y: -0.24362278}
   m_AutoConfigureAngle: 0
   m_Angle: 0
   m_UseMotor: 1
@@ -8782,9 +8782,10 @@ GameObject:
   - component: {fileID: 3756553629605505954}
   - component: {fileID: 3756553629605505955}
   - component: {fileID: 3756553629605505952}
+  - component: {fileID: 3756553629605505982}
   m_Layer: 8
   m_Name: Platform
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8814,6 +8815,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.28314257, y: 0.142807}
+  m_EdgeRadius: 0
+--- !u!61 &3756553629605505982
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756553629605505958}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.070762515, y: 0.064063296}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.28622222, y: 0.03284678}
   m_EdgeRadius: 0
 --- !u!4 &3756553629628478026
 Transform:
@@ -10760,7 +10787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4995128552788156807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.504, y: -0.607, z: 0}
+  m_LocalPosition: {x: 2.776, y: 0.296, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10782,6 +10809,7 @@ GameObject:
   - component: {fileID: 4995128552788156857}
   - component: {fileID: 4995128552788156863}
   - component: {fileID: 4995128552788156853}
+  - component: {fileID: 4995128552788156864}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -10878,6 +10906,18 @@ MonoBehaviour:
   _animator: {fileID: 4995128553631717169}
   runSpeed: 5
   horizontalMove: 0
+--- !u!114 &4995128552788156864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995128552788156807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3f54432fabfda4c8582c3134f0c7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4995128552866379862
 Transform:
   m_ObjectHideFlags: 0
@@ -11906,18 +11946,6 @@ Transform:
   m_Father: {fileID: 3756553630308442088}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5253636520644140763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253636520644140773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3637c4850e2f364aac870d498be24d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5253636520644140773
 GameObject:
   m_ObjectHideFlags: 0
@@ -11928,7 +11956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5253636520644140762}
   - component: {fileID: 5253636520644140760}
-  - component: {fileID: 5253636520644140763}
+  - component: {fileID: 5253636520644140774}
   m_Layer: 8
   m_Name: FinishZone
   m_TagString: Untagged
@@ -11936,6 +11964,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5253636520644140774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253636520644140773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1588fb07b6954a97040e63d0a1e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5253636521464833024
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12112,7 +12152,7 @@ GameObject:
   - component: {fileID: 5253636521477283096}
   m_Layer: 8
   m_Name: Platform
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12475,7 +12515,7 @@ MonoBehaviour:
   _alphaImage: {fileID: 6367172239934244086}
   _alpha: 0
   _water: []
-  _pop: "\u0423\u0440\u0430! \u041F\u043E\u0431\u0435\u0434\u0430"
+  _popText: 
 --- !u!223 &6367172239008001390
 Canvas:
   m_ObjectHideFlags: 0
@@ -17818,7 +17858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7525242943600073138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5346665, y: -0.16699988, z: -10}
+  m_LocalPosition: {x: 2.8066666, y: 0.7360001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

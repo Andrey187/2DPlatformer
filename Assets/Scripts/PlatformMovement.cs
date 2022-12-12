@@ -16,7 +16,7 @@ public class PlatformMovement : MonoBehaviour
     {
         MovePlatform();
     }
-
+    
     private void MovePlatform()
     {
         if(_slider.limitState == JointLimitState2D.LowerLimit)

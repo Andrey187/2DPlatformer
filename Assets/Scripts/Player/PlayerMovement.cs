@@ -57,5 +57,5 @@ public class PlayerMovement : MonoBehaviour
             _isJump = false;
             _animator.SetBool("IsJump", false);
         }
-    }
+	}
 }
